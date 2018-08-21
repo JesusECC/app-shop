@@ -50,6 +50,9 @@
 					            {{ Auth::user()->name }} <span class="caret"></span>
 					        </a>
 					        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								@if (auth()->user()->admin)
+								<a href="{{ url('/admin/products') }}">Gestionar Productos</a>
+								@endif
 					            <a class="dropdown-item" href="{{ route('logout') }}"
 					               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
 					                {{ __('Cerrar sesión') }}
